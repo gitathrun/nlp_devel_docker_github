@@ -1,6 +1,3 @@
-# for a docker image with:
-# CUDA 9.0 + cuDNN 7.x
-# Anaconda 5.2 (python 3.6)
 # --- NLP packages ---
 # nltk
 # spacy
@@ -29,11 +26,17 @@ RUN python -m spacy download en_core_web_md
 RUN python -m spacy download en_core_web_lg
 RUN python -m spacy download en_vectors_web_lg
 
+# latest BERT models
+RUN python -m spacy download en_trf_bertbaseuncased_lg
+RUN python -m spacy download en_trf_robertabase_lg
+RUN python -m spacy download en_trf_distilbertbaseuncased_lg
+RUN python -m spacy download en_trf_xlnetbasecased_lg
+
 # multi-language
 RUN python -m spacy download xx_ent_wiki_sm
 
 # for other spaCy model
-# https://spacy.io/usage/models
+# https://spacy.io/models
 
 # gensim
 RUN pip install --upgrade gensim
@@ -41,6 +44,9 @@ RUN pip install --upgrade gensim
 # textblob
 RUN pip install -U textblob
 RUN python -m textblob.download_corpora
+
+# nlp augumentation
+RUN pip install nlpaug python-dotenv
 
 # setup the work dir
 WORKDIR /app
