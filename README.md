@@ -22,6 +22,11 @@ For NLP packages:
 -  gensim 
 -  textblob 
 
+For NLP pipeline:
+
+- DVC
+- snorkel
+
 All the additional language models are also installed by using:
 
 ```

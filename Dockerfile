@@ -48,5 +48,8 @@ RUN python -m textblob.download_corpora
 # nlp augumentation
 RUN pip install nlpaug python-dotenv
 
+# snorkel
+RUN pip install snorkel
+
 # setup the work dir
 WORKDIR /app
